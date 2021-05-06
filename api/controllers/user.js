@@ -74,7 +74,7 @@ controller.autenticar = (req, res, next) => {
                         email : user[0].email,
                         userId : user[0]._id
                     }, 
-                    "secret",
+                    process.env.SECRET,
                     {
                         expiresIn : "1h"
                     })
@@ -90,8 +90,6 @@ controller.autenticar = (req, res, next) => {
                 message : err.message
             })
         });
-
-
 }
 
 module.exports = controller;

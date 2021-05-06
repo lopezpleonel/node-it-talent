@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
@@ -25,5 +26,11 @@ app.use((req, res, next) => {
 app.use('/api/destinatario', require('./api/routers/destinatario'));
 app.use('/api/transferencia', require('./api/routers/transferencia'));
 app.use('/api/user', require('./api/routers/user'));
+
+app.use(express.static(path.join(__dirname,'dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+})
 
 module.exports = app;
