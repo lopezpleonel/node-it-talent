@@ -23,9 +23,9 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/destinatario', require('./api/routers/destinatario'));
-app.use('/api/transferencia', require('./api/routers/transferencia'));
-app.use('/api/user', require('./api/routers/user'));
+app.use('/destinatario', require('./api/routers/destinatario'));
+app.use('/transferencia', require('./api/routers/transferencia'));
+app.use('/user', require('./api/routers/user'));
 
 app.use(express.static(path.join(__dirname,'dist/ripley')));
 
