@@ -33,4 +33,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/ripley/index.html'));
 })
 
-module.exports = app;S
+module.exports = app;
