@@ -27,10 +27,10 @@ app.use('/api/destinatario', require('./api/routers/destinatario'));
 app.use('/api/transferencia', require('./api/routers/transferencia'));
 app.use('/api/user', require('./api/routers/user'));
 
-app.use(express.static(path.join(__dirname,'dist')));
+app.use(express.static(path.join(__dirname,'dist/ripley')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/ripley/index.html'));
 })
 
-module.exports = app;
+module.exports = app;S
